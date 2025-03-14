@@ -5,9 +5,8 @@ type Intro = {
 };
 
 const Home = async () => {
-  const introData: Intro = await fetch("http://localhost:4000/intro", {
-    cache: "force-cache",
-  }).then((response) => response.json());
+  const introData = await getIntro();
+
   return (
     <div>
       <div className="home-container">
