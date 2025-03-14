@@ -1,18 +1,8 @@
-type BlogsItem = {
-  id: string;
-  title: string;
-  content: string;
-  author: string;
-  category: string;
-  createdAt: number;
-  tags: string[];
-};
+import { getBlogs } from "@/services/blogsService";
 
 const BlogPage = async () => {
-  const blogs: BlogsItem[] = await fetch("http://localhost:4000/blogs", {
-    cache: "no-store",
-  }).then((res) => res.json());
-  
+  const blogs = await getBlogs();
+
   return (
     <div>
       <div className="blog-container">
