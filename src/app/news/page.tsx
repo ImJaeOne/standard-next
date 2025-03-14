@@ -1,18 +1,7 @@
-type NewsItem = {
-  id: string;
-  title: string;
-  content: string;
-  author: string;
-  category: string;
-  createdAt: number;
-};
+import { getNews } from "@/services/newsService";
 
 const NewsPage = async () => {
-  const news: NewsItem[] = await fetch("http://localhost:4000/news", {
-    next: {
-      revalidate: 60 * 5,
-    },
-  }).then((res) => res.json());
+  const news = await getNews();
 
   return (
     <div className="news-container">

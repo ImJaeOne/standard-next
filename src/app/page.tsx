@@ -1,3 +1,5 @@
+import { getIntro } from "@/services/introService";
+
 const Home = async () => {
   const introData = await getIntro();
 

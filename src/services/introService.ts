@@ -4,7 +4,7 @@ type Intro = {
   description3: string;
 };
 
-const getIntro = async (): Promise<Intro> => {
+export const getIntro = async (): Promise<Intro> => {
   const res = await fetch("http://localhost:4000/intro", {
     cache: "force-cache",
   });
